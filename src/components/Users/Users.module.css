@@ -1,0 +1,32 @@
+.users {
+    width: 300px;
+    margin: 20px 0;
+}
+
+.chatBlock {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 60px;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-left: 10px;
+}
+
+.online {
+    color: limegreen;
+}
+
+.offline {
+    color: darkgrey;
+}
+
+

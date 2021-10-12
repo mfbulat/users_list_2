@@ -1,0 +1,12 @@
+.chatContainer {
+    display: flex;
+    justify-content: flex-start;
+    height: 90vh;
+}
+
+.dialogContainer {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: flex-end;
+}

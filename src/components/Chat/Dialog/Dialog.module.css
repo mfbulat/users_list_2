@@ -1,0 +1,28 @@
+.messagesContainer {
+    margin: 10px;
+    overflow: auto;
+}
+
+
+.messageContainer {
+    display: flex;
+    justify-content: center;
+    margin: 5px 5px;
+}
+
+.message {
+    padding: 5px;
+    border-radius: 5px;
+}
+.messageLeft {
+    background-color: lightgray;
+}
+.messageRight {
+    background-color: cornflowerblue;
+}
+
+.message span {
+
+}
+
+

@@ -1,0 +1,27 @@
+.profileContainer {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    height: 90vh;
+}
+
+.profileBlock {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50vh;
+    width: 80vw;
+    margin-top: 40px;
+}
+
+.photo {
+
+}
+.photo img {
+    max-width: 300px;
+}
+
+.aboutMe {
+    max-width: 600px;
+    text-align: left;
+}
