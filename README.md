@@ -4,12 +4,12 @@ react test project
 
 ## Stack
 
-React
-Redux
-Redux-thunk
-TypeScript
-Material-UI
-react-router
+* React
+* Redux
+* Redux-thunk
+* TypeScript
+* Material-UI
+* react-router
 
 ## Install
 
