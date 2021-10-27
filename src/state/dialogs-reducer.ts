@@ -8,25 +8,25 @@ const initialState: DialogsType = {
     [1]: [
         {id: 1, userId: 1, message: 'Hi, i am Viktor'},
         {id: 2, userId: 10, message: 'Hi'},
-        {id: 3, userId: 1, message: 'How are your?'},
+        {id: 3, userId: 1, message: 'How are you?'},
         {id: 4, userId: 10, message: 'Great!'},
     ],
     [2]: [
         {id: 1, userId: 1, message: 'Hi, i am Donald'},
         {id: 2, userId: 10, message: 'Hi'},
-        {id: 3, userId: 1, message: 'How, are your?'},
+        {id: 3, userId: 1, message: 'How, are you?'},
         {id: 4, userId: 10, message: 'Great!'},
     ],
     [3]: [
         {id: 1, userId: 1, message: 'Hi, i am Jeff'},
         {id: 2, userId: 10, message: 'Hi'},
-        {id: 3, userId: 1, message: 'How are your?'},
+        {id: 3, userId: 1, message: 'How are you?'},
         {id: 4, userId: 10, message: 'Great!'},
     ],
     [4]: [
         {id: 1, userId: 1, message: 'Hi, i am Elon'},
         {id: 2, userId: 10, message: 'Hi'},
-        {id: 3, userId: 1, message: 'How are your?'},
+        {id: 3, userId: 1, message: 'How are you?'},
         {id: 4, userId: 10, message: 'Great!'},
     ],
 }

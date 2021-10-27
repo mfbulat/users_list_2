@@ -40,7 +40,7 @@ const Chat = () => {
     }
     return (
         <div className={style.chatContainer}>
-            <Users usersList={usersList} onUserClick={onUserClick}/>
+            <Users usersList={usersList} onUserClick={onUserClick} clickedUserId={userId}/>
             <div className={style.dialogContainer}>
                 <Dialog dialog={dialog} auth={auth}/>
                 <MessageForm sendMessage={sendMessage}/>

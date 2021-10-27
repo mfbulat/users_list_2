@@ -4,8 +4,8 @@ import {Dispatch} from 'redux'
 const initialState = {
     id: 10,
     isLoggedIn: false,
-    userName: 'test@test.com',
-    password: 'test',
+    userName: 'developer21',
+    password: '123456',
     name: 'Ivan',
     lastName: 'Ivanovich',
     photo: 'http://i.imgur.com/alxnAjw.jpg',
@@ -28,7 +28,7 @@ export const setIsLoggedInAC = (value: boolean) =>
 //thanks
 export const setIsLoggedInTC = (values: FormikErrorType) => (dispatch: Dispatch) => {
     debugger
-    if (values.email === initialState.userName && values.password === initialState.password) {
+    if (values.login === initialState.userName && values.password === initialState.password) {
         dispatch(setIsLoggedInAC(true))
     } else {
         alert('error')

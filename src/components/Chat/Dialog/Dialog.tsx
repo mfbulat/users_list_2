@@ -23,7 +23,6 @@ const Dialog = (props: DialogPropsType) => {
                         <div className={m.userId === auth.id
                             ? `${style.message}  ${style.messageRight}`
                             : `${style.message}  ${style.messageLeft}`}>
-                            {/*<div className={style.message}>*/}
                             <span>{m.message}</span>
                         </div>
                     </div>

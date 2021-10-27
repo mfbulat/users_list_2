@@ -1,36 +1,36 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Checkbox, FormControl, FormControlLabel, FormGroup, FormLabel, TextField, Button, Grid} from '@material-ui/core'
 import {useFormik} from 'formik'
 import {useDispatch, useSelector} from 'react-redux'
 import {AppRootStateType} from '../../state/store'
 import {Redirect} from 'react-router-dom'
-import {setIsLoggedInTC} from '../../state/auth-reducer'
+import {setIsLoggedInTC, UserType} from '../../state/auth-reducer'
 import {PATH} from '../Routes/Routes'
 import {Paper} from '@mui/material'
 
 export type FormikErrorType = {
-    email?: string
+    login?: string
     password?: string
 }
 
 
 const Login = () => {
     const dispatch = useDispatch()
-    const isLogin = useSelector<AppRootStateType, boolean>(state => state.auth.isLoggedIn)
+    const auth = useSelector<AppRootStateType, UserType>(state => state.auth)
+    const [btnDisable, setBtnDisable] = useState(true)
 
     const formik = useFormik({
         initialValues: {
-            email: '',
+            login: '',
             password: '',
         },
         validate: (values) => {
             const errors: FormikErrorType = {};
-            if (!values.email) {
-                errors.email = 'Required';
-            } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-                errors.email = 'Invalid email address';
-            }
+            checkLoginAndPassword(values.login, values.password)
 
+            if (!values.login) {
+                errors.login = 'Required';
+            }
             if (!values.password) {
                 errors.password = 'Required';
             } else if (values.password.length <= 3) {
@@ -44,7 +44,13 @@ const Login = () => {
         },
     })
 
-    if (isLogin) {
+    const checkLoginAndPassword = (login: string, password: string) => {
+        if (login === auth.userName && password === auth.password) {
+            setBtnDisable(false)
+        } else setBtnDisable(true)
+    }
+
+    if (auth.isLoggedIn) {
         return <Redirect to={PATH.PROFILE}/>
     }
 
@@ -55,20 +61,20 @@ const Login = () => {
                     <FormControl fullWidth>
                         <FormLabel>
                             <p>use test account </p>
-                            <p>Email: test@test.com</p>
-                            <p>Password: test</p>
+                            <p>Login: {auth.userName}</p>
+                            <p>Password: {auth.password}</p>
                         </FormLabel>
                         <FormGroup>
                             <TextField
-                                label='Email'
+                                label='Login'
                                 margin='normal'
-                                name='email'
+                                name='login'
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
-                                value={formik.values.email}
+                                value={formik.values.login}
                             />
-                            {formik.touched.email && formik.errors.email ?
-                                <div style={{'color': 'red'}}>{formik.errors.email}</div> : null}
+                            {formik.touched.login && formik.errors.login ?
+                                <div style={{'color': 'red'}}>{formik.errors.login}</div> : null}
                             <TextField
                                 type='password'
                                 label='Password'
@@ -84,7 +90,8 @@ const Login = () => {
                                 label={'Remember me'}
                                 control={<Checkbox/>}
                             />
-                            <Button type={'submit'} variant={'contained'} color={'primary'}>Login</Button>
+                            <Button type={'submit'} variant={'contained'}
+                                    color={'primary'} disabled={btnDisable}>Login</Button>
                         </FormGroup>
                     </FormControl>
                 </form>

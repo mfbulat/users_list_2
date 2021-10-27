@@ -16,6 +16,7 @@ const Routes = () => {
     return (
         <div>
             <Switch>
+                <Route exact path={'/'} render={() => <Login/>} />
                 <Route exact path={PATH.PROFILE} render={() => <Profile/>} />
                 <Route path={PATH.LOGIN} render={() => <Login/>}/>
                 <Route path={PATH.CHAT} render={() => <Chat/>}/>

@@ -19,7 +19,7 @@ const Profile = () => {
             <Paper elevation={3} className={style.profileBlock}>
                <div className={style.photo}><img src={user.photo} alt={'user photo'}/></div>
                <div className={style.aboutMe}>
-                   <h1>{`${user.name} ${user.lastName}`}</h1>
+                   <h1>{`${user.userName}`}</h1>
                    <p>{user.aboutMe}</p>
                </div>
             </Paper>
